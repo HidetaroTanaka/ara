@@ -108,6 +108,9 @@ reset_vector:
     // Enable the counters
     csrsi   mcounteren, 1
     csrsi   scounteren, 1
+    // select performance counter events
+    // csrwi mhpmevent3, 1
+    // csrwi mhpmevent4, 2
     // Call the RISC-V Test initialization function, if it exists
     la t0, rvtest_init
     beqz t0, 1f
